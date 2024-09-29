@@ -3,6 +3,7 @@
  *
  * $ npm install @google/generative-ai
  */
+import React from 'react';
 
 import {
     GoogleGenerativeAI,
@@ -36,7 +37,9 @@ import {
     });
   
     const result = await chatSession.sendMessage(prompt);
-    console.log(result.response.text());
+    const response = result.response;
+    console.log(response.text());
+    return response.text();
   }
     /*
   async function run(prompt) {
